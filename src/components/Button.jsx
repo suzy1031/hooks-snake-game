@@ -1,24 +1,25 @@
 import React from 'react';
+import { GameStatus } from '../constants';
 
 const Button = ({ status, onStart, onStop, onRestart }) => {
   return (
     <div className='button'>
-      {status === 'gameOver' && (
+      {status === GameStatus.gameOver && (
         <button className='btn btn-gameOver' onClick={onRestart}>
           gameOver
         </button>
       )}
-      {status === 'init' && (
+      {status === GameStatus.init && (
         <button className='btn btn-init' onClick={onStart}>
           start
         </button>
       )}
-      {status === 'suspended' && (
+      {status === GameStatus.suspended && (
         <button className='btn btn-suspended' onClick={onStart}>
           start
         </button>
       )}
-      {status === 'playing' && (
+      {status === GameStatus.playing && (
         <button className='btn btn-playing' onClick={onStop}>
           stop
         </button>
